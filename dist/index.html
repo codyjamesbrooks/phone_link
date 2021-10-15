@@ -8,15 +8,19 @@
   </head>
   <body>
     <head>
-      <h1>Phone Link</h1>
-      <h2>coded by: cody</h2>
+      <h1 id="page_title">Phone Link</h1>
     </head>
     <main>
       <div data-controller="link">
         <input type="tel" id="number" placeholder="1 (123) 456 7899" autofocus data-link-target="number">
         <button data-action="link#create">Create</button> 
-        <div id="link">Enter Phone #</div>
+        <div id="link">
+          <span id="instructions">Enter Phone #</span>
+        </div>
       </div>
     </main>
+    <footer>
+      <h2>coded by: cody</h2>
+    </footer>
   </body>
 </html>

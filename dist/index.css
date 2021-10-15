@@ -3,12 +3,14 @@
 /* Medium: 640 - 1000 */
 /* Large: 1000 + */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@700&display=swap');
+
 body {
   box-sizing: border-box;
   margin: 0; 
   background: #FAE5E5;
   text-align: center;
+  font-family: 'Bebas Neue';
 }
 
 main {
@@ -18,7 +20,28 @@ main {
   align-items: center;
 }
 
-#number {
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  border: 1px solid black;
+}
+
+#page_title {
+  font-size: 5rem;
+  letter-spacing: .5rem;
+  border: 1px solid black;
+  margin-bottom: 0;
+
+}
+
+#instructions {
+  font-size: 3rem;
+}
+
+
+input {
   font-family: 'Space Mono';
   border: 5px solid black; 
   margin: auto; 
@@ -26,5 +49,5 @@ main {
   text-align: center;
   font-size: 9ch;
   background: #EA5C42;
-
+  margin-bottom: 5%;
 }
