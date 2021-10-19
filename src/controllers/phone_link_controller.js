@@ -11,7 +11,7 @@ export default class extends Controller {
   static targets = [ 'number', 'message', 'generatedLink', 'numberInfo', 
                      'escape', 'country', 'area', 'tel', 'line'];
   
-                     
+             
   get number() {
     return this.numberTarget.value.replace(/[^\d\+]/g, '')
   }
@@ -25,7 +25,7 @@ export default class extends Controller {
    return this.generatedLinkTarget;
   }
 
-  hideElement(...elements) {
+  hideElements(...elements) {
     elements.forEach((element) => element.classList.add(this.hiddenClass))
   }
   revalElements(...elements) {
@@ -48,13 +48,8 @@ export default class extends Controller {
     this.escapeTarget.innerHTML = `Escape Code: ${value}`
   }
 
-
-  createNumber() {
-    return new phoneNumber(this.number)
-  }
-
   change() {
-    let potentialNumber = this.createNumber()
+    let potentialNumber = new phoneNumber(this.number)
     this.updateMessageDisplay()
 
     if (potentialNumber.valid()) {
@@ -69,7 +64,7 @@ export default class extends Controller {
       this.revalElements(this.generatedLink, this.numberInfo)
     } else {
       // Phone number isn't valid yet. 
-      this.hideElement(this.generatedLink, this.numberInfo)
+      this.hideElements(this.generatedLink, this.numberInfo)
     }
   }
 
