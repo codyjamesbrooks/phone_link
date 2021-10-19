@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
-import { phoneNumberObject as phoneNumber } from "../phone_number";
+import phoneNumber from "../phone_number";
 
 export default class extends Controller {
   static values = { escape: String, 

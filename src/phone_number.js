@@ -42,4 +42,4 @@ function phoneNumberObject(number) {
   }
 }
 
-export { phoneNumberObject }
+export default phoneNumberObject 
