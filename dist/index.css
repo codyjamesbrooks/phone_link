@@ -1,5 +1,6 @@
 /* breakpoints */
-/* Small: 400 */
+/* Small: width <= 400 */
+/* Medium: 400 - 600 */
 /* Medium: 640 - 1000 */
 /* Large: 1000 + */
 
@@ -8,46 +9,100 @@
 body {
   box-sizing: border-box;
   margin: 0; 
+  height: 100vh;
+  display: grid; 
+  grid-template-rows: 15% 80% 5%;
+  grid-template-areas: "header" "main" "footer";
   background: #FAE5E5;
-  text-align: center;
   font-family: 'Bebas Neue';
 }
 
-main {
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  grid-template-areas: "input" "output";
+}
+
+footer {
+  grid-area: footer;
+}
+
+#page_title {
+  /* margin-top: 0;
+  padding-bottom: 0; */
+  padding: 0;
+  font-size: 2em;
+  letter-spacing: .25em;
+}
+
+#input_container {
+  grid-area: input;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%; 
-  border: 1px solid black;
-}
-
-#page_title {
-  font-size: 5rem;
-  letter-spacing: .5rem;
-  border: 1px solid black;
-  margin-bottom: 0;
-
-}
-
-#instructions {
-  font-size: 3rem;
-}
-
-
 input {
   font-family: 'Space Mono';
-  border: 5px solid black; 
-  margin: auto; 
-  height: 200px;
+  border: 2px solid black; 
+  border-radius: 75px;
   text-align: center;
-  font-size: 9ch;
-  background: #EA5C42;
-  margin-bottom: 5%;
+  font-size: 1.5em;
+  background: rgba(234, 92, 66, .5);
 }
+
+#output_container {
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center; 
+  font-size: 1.5rem;
+}
+
+#phoneLink {
+  margin-bottom: 2%;
+}
+
+
+#message {
+  margin-bottom: 1%;
+}
+
+#information {
+  width: 100vw;
+  padding-top: 2%;
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.hidden {
+  visibility: hidden
+}
+
+
+/* Medium Screen 400-600 */
+/* @media (max-width: 600px) {
+  #page_title {
+    font-size: 4rem;
+  }
+}  */
+
+/* Large Screen 600-1000 */
+/* @media (max-width: 1000px) {
+  #page_title {
+    font-size: 3rem;
+  }
+} */
+
