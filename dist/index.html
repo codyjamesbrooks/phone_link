@@ -2,20 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="stylesheet" href="index.css">
     <title>Phone Link</title>
     <script src="main.js" async></script>
   </head>
   <body>
-    <head>
+    <header>
       <h1 id="page_title">Phone Link</h1>
-    </head>
-    <main>
-      <div data-controller="link">
-        <input type="tel" id="number" placeholder="1 (123) 456 7899" autofocus data-link-target="number">
-        <button data-action="link#create">Create</button> 
-        <div id="link">
-          <span id="instructions">Enter Phone #</span>
+    </header>
+    <main data-controller="phone-link"
+          data-phone-link-hidden-class="hidden"
+          data-phone-link-escape-value=""
+          data-phone-link-country-value=""
+          data-phone-link-area-value=""
+          data-phone-link-tel-value=""
+          data-phone-link-line-value="">
+      <div id="input_container">
+        <input type="tel" id="number" placeholder="+1 (720) 307-6019" autofocus
+        data-phone-link-target="number"
+        data-action="input->phone-link#change">
+      </div>
+      <div id="output_container">
+        <span id="message" data-phone-link-target="message">Enter phone number to genterate link to</span>
+        <a id="phoneLink" href="" data-phone-link-target="generatedLink"></a>
+        <div id="information" data-phone-link-target="numberInfo" class="hidden">
+          Number Break Down
+          <div class="numberInfo" data-phone-link-target="escape"></div>
+          <div class="numberInfo" data-phone-link-target="country"></div>
+          <div class="numberInfo" data-phone-link-target="area"></div>
+          <div class="numberInfo" data-phone-link-target="tel"></div>
+          <div class="numberInfo" data-phone-link-target="line"></div>
         </div>
       </div>
     </main>
