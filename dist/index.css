@@ -5,7 +5,9 @@
 /* Large: 1000 + */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/*** App wide CSS ***/
 body {
   box-sizing: border-box;
   margin: 0; 
@@ -13,36 +15,41 @@ body {
   display: grid; 
   grid-template-rows: 15% 80% 5%;
   grid-template-areas: "header" "main" "footer";
-  background: #FAE5E5;
-  font-family: 'Bebas Neue';
+  background: rgba(234, 92, 66, .5);
+  font-family: Roboto;
+  color: #444444;
 }
-
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-area: header;
 }
-
 main {
   grid-area: main;
   display: grid;
   grid-template-rows: 20% 80%;
   grid-template-areas: "input" "output";
 }
-
 footer {
   grid-area: footer;
 }
+/* utility class used by controller */
+.hidden {
+  visibility: hidden
+}
 
+/*** header elements ***/
 #page_title {
+  font-family: 'Bebas Neue';
   /* margin-top: 0;
   padding-bottom: 0; */
   padding: 0;
   font-size: 2em;
-  letter-spacing: .25em;
+  letter-spacing: .1em;
 }
 
+/*** main elements ***/
 #input_container {
   grid-area: input;
   display: flex;
@@ -56,7 +63,7 @@ input {
   border-radius: 75px;
   text-align: center;
   font-size: 1.5em;
-  background: rgba(234, 92, 66, .5);
+  background: #FAE5E5;
 }
 
 #output_container {
@@ -70,39 +77,55 @@ input {
 
 #phoneLink {
   margin-bottom: 2%;
+  text-decoration: none;
+  padding: .1em 1em;
+  border-radius: 4px;
+  color: black;
+  border: 1px solid #444444;
+  background: #FAE5E5;
 }
-
 
 #message {
   margin-bottom: 1%;
 }
 
 #information {
-  width: 100vw;
+  width: 60vw;
   padding-top: 2%;
   display: flex; 
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid black;
 }
 
-.hidden {
-  visibility: hidden
+.numberInfo {
+  width: 100%;
+  margin-top: 2%;
+  padding: 1% 2%;
+  border: 1px solid black; 
+  border-radius: 3px;
+  background:#FAE5E5;
+}
+
+.infoTitle {
+  margin-right: 5%;  
+}
+.infoValue {
+  font-size: 1.rem; 
 }
 
 
 /* Medium Screen 400-600 */
-/* @media (max-width: 600px) {
+ @media only screen and (max-width: 600px) {
   #page_title {
     font-size: 4rem;
   }
-}  */
+} 
 
 /* Large Screen 600-1000 */
-/* @media (max-width: 1000px) {
+ @media only screen and (min-width: 1000px) {
   #page_title {
     font-size: 3rem;
   }
-} */
+} 
 
