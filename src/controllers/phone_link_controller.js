@@ -33,19 +33,19 @@ export default class extends Controller {
   }
 
   telValueChanged(value) {
-    this.telTarget.innerHTML = `Tel Prefix:   ${value}`
+    this.telTarget.innerHTML = this.formatFormatNumberInfoTitle('Tel Prefix') + this.formatNumberInfoValue(value)
   }
   lineValueChanged(value) {
-    this.lineTarget.innerHTML = `Line Number:   ${value}`
+    this.lineTarget.innerHTML = this.formatFormatNumberInfoTitle('Line Number') + this.formatNumberInfoValue(value)
   }
   areaValueChanged(value) {
-    this.areaTarget.innerHTML = `Area Code: ${value}`
+    this.areaTarget.innerHTML = this.formatFormatNumberInfoTitle('Area Code') + this.formatNumberInfoValue(value)
   }
   countryValueChanged(value) {
-    this.countryTarget.innerHTML = `Country Code: ${value}`
+    this.countryTarget.innerHTML = this.formatFormatNumberInfoTitle('Country Code') + this.formatNumberInfoValue(value)
   }
   escapeValueChanged(value) {
-    this.escapeTarget.innerHTML = `Escape Code: ${value}`
+    this.escapeTarget.innerHTML = this.formatFormatNumberInfoTitle('Escape Code') + this.formatNumberInfoValue(value)
   }
 
   change() {
@@ -91,5 +91,12 @@ export default class extends Controller {
   createPhoneLink(fomattedPhoneNumber) {
     this.generatedLink.setAttribute("href", `tel:${this.number}`);
     this.generatedLink.innerHTML = fomattedPhoneNumber
+  }
+
+  formatFormatNumberInfoTitle(title) {
+    return `<span class="infoTitle">${title}:</span>`
+  }
+  formatNumberInfoValue(value) {
+    return `<span class="infoValue">${value}</span>`
   }
 }

@@ -10,11 +10,11 @@ function phoneNumberObject(number) {
     let matchGroups = this.number.match(this.phoneREGEX)
     let parts = {}
     if (matchGroups) {
-      parts.escapeCode = matchGroups[1] ?? "None Provided",
-      parts.countryCode = matchGroups[2] ?? "None Provided",
-      parts.areaCode = matchGroups[4] ?? "None Provided",
-      parts.telPrefix = matchGroups[5] ?? "None Provided",
-      parts.lineNumber = matchGroups[6] ?? "None Provided"
+      parts.escapeCode = matchGroups[1] ?? "None",
+      parts.countryCode = matchGroups[2] ?? "None",
+      parts.areaCode = matchGroups[4] ?? "None",
+      parts.telPrefix = matchGroups[5] ?? "None",
+      parts.lineNumber = matchGroups[6] ?? "None"
     }
     return parts;
   }
@@ -23,7 +23,7 @@ function phoneNumberObject(number) {
     let phoneParts = this.parseNumber()
     let formatedNumber = ""
     formatedNumber += this.formatEscapeAndCountryCode(phoneParts)
-    if (phoneParts.areaCode != "None Provided") {
+    if (phoneParts.areaCode != "None") {
       formatedNumber += `(${phoneParts.areaCode}) `
     }
     formatedNumber += `${phoneParts.telPrefix}-${phoneParts.lineNumber}`
@@ -31,8 +31,8 @@ function phoneNumberObject(number) {
   }
 
   this.formatEscapeAndCountryCode= function(parsedPhone) {
-    let escape = parsedPhone.escapeCode != "None Provided" ? parsedPhone.escapeCode : ""
-    let country = parsedPhone.countryCode != "None Provided" ? parsedPhone.countryCode : ""
+    let escape = parsedPhone.escapeCode != "None" ? parsedPhone.escapeCode : ""
+    let country = parsedPhone.countryCode != "None" ? parsedPhone.countryCode : ""
     if (escape && country) {
       return `${escape}${country} `
     } else if (country) {
