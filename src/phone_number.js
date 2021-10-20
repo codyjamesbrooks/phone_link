@@ -1,6 +1,6 @@
 function phoneNumberObject(number) {
-  this.number = number
-  this.phoneREGEX = new RegExp(/^(\+)?(\d{1,2})?\s?(\(?(\d{3})\)?)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/)
+  this.number = number;
+  this.phoneREGEX = new RegExp(/^(\+)?(\d{1,2})?\s?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/)
 
   this.valid = function() {
     return this.phoneREGEX.test(this.number)
@@ -12,9 +12,9 @@ function phoneNumberObject(number) {
     if (matchGroups) {
       parts.escapeCode = matchGroups[1] ?? "None",
       parts.countryCode = matchGroups[2] ?? "None",
-      parts.areaCode = matchGroups[4] ?? "None",
-      parts.telPrefix = matchGroups[5] ?? "None",
-      parts.lineNumber = matchGroups[6] ?? "None"
+      parts.areaCode = matchGroups[3]
+      parts.telPrefix = matchGroups[4]
+      parts.lineNumber = matchGroups[5]
     }
     return parts;
   }
@@ -23,10 +23,7 @@ function phoneNumberObject(number) {
     let phoneParts = this.parseNumber()
     let formatedNumber = ""
     formatedNumber += this.formatEscapeAndCountryCode(phoneParts)
-    if (phoneParts.areaCode != "None") {
-      formatedNumber += `(${phoneParts.areaCode}) `
-    }
-    formatedNumber += `${phoneParts.telPrefix}-${phoneParts.lineNumber}`
+    formatedNumber += `(${phoneParts.areaCode}) ${phoneParts.telPrefix}-${phoneParts.lineNumber}`
     return formatedNumber
   }
 
@@ -42,4 +39,4 @@ function phoneNumberObject(number) {
   }
 }
 
-export default phoneNumberObject 
+export default phoneNumberObject
