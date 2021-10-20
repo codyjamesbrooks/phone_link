@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
-import phoneNumber from "../phone_number";
+import { validatePhoneNumber, parsePhoneNumber, formatPhoneNumber } from "../phone_number"; 
 
 export default class extends Controller {
   static values = { escape: String, 
@@ -11,7 +11,6 @@ export default class extends Controller {
   static targets = [ 'number', 'message', 'generatedLink', 'numberInfo', 
                      'escape', 'country', 'area', 'tel', 'line', 'arrow'];
   
-             
   get number() {
     return this.numberTarget.value.replace(/[^\d\+]/g, '')
   }
@@ -49,31 +48,27 @@ export default class extends Controller {
   }
 
   change() {
-    let potentialNumber = new phoneNumber(this.number)
     this.updateMessageDisplay()
+    if (validatePhoneNumber(this.number)) {
+      let parsedNumber = parsePhoneNumber(this.number)
+      let formattedNumber = formatPhoneNumber(parsedNumber)
 
-    if (potentialNumber.valid()) {
-      // get & set the phone number info
-      let phoneInfo = potentialNumber.parseNumber()
-      this.setPhoneNumberInformation(phoneInfo)
-      
-      // create the phone link
-      let formattedPhoneNumber = potentialNumber.format()
-      this.createPhoneLink(formattedPhoneNumber)
+      this.setPhoneNumberInformation(parsedNumber)
+      this.createPhoneLink(formattedNumber)
 
       this.revalElements(this.generatedLink, this.numberInfo, ...this.arrowTargets)
     } else {
-      // Phone number isn't valid yet. 
+      // Phone number isn't valid yet, so we hide the link, number info, and the arrows. 
       this.hideElements(this.generatedLink, this.numberInfo, ...this.arrowTargets)
     }
   }
 
   setPhoneNumberInformation(phoneInfo) {
-    if (phoneInfo.lineNumber != this.lineValue) { this.lineValue= phoneInfo.lineNumber }
-    if (phoneInfo.telPrefix!= this.telValue) { this.telValue= phoneInfo.telPrefix}
-    if (phoneInfo.areaCode!= this.areaValue) { this.areaValue= phoneInfo.areaCode }
-    if (phoneInfo.countryCode!= this.countryValue) { this.countryValue = phoneInfo.countryCode }
-    if (phoneInfo.escapeCode!= this.escapeValue) { this.escapeValue= phoneInfo.escapeCode }
+    if (phoneInfo.line != this.lineValue) { this.lineValue= phoneInfo.line }
+    if (phoneInfo.tel != this.telValue) { this.telValue= phoneInfo.tel}
+    if (phoneInfo.area != this.areaValue) { this.areaValue= phoneInfo.area }
+    if (phoneInfo.country != this.countryValue) { this.countryValue = phoneInfo.country }
+    if (phoneInfo.escape != this.escapeValue) { this.escapeValue= phoneInfo.escape }
   }
 
   updateMessageDisplay() {
