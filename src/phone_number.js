@@ -1,7 +1,37 @@
+function validatePhoneNumber(number) {
+  const phoneREGEX = new RegExp(/^(\+)?(\d{1,2})?\s?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/)
+  return phoneREGEX.test(number)
+}
+
+function parsePhoneNumber(number) {
+  const phoneREGEX = new RegExp(/^(\+)?(\d{1,2})?\s?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/)
+  let matchGroups = number.match(phoneREGEX)
+  return ({
+    escape: matchGroups[1] ?? "None",
+    country: matchGroups[2] ?? "None",
+    area: matchGroups[3],
+    tel: matchGroups[4],
+    line: matchGroups[5]
+  })
+}
+
+function formatPhoneNumber(parsedNumber) {
+  let formattedPhone = "";
+  formattedPhone += parsedNumber.escape != "None" ? parsedNumber.escape : "";
+  formattedPhone += parsedNumber.country != "None" ? `${parsedNumber.country} ` : ""
+  formattedPhone += `(${parsedNumber.area}) ${parsedNumber.tel}-${parsedNumber.line}`
+  return formattedPhone
+}
+
+
+
+
+
+
+
 function phoneNumberObject(number) {
   this.number = number;
   this.phoneREGEX = new RegExp(/^(\+)?(\d{1,2})?\s?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$/)
-
   this.valid = function() {
     return this.phoneREGEX.test(this.number)
   }
@@ -39,4 +69,4 @@ function phoneNumberObject(number) {
   }
 }
 
-export default phoneNumberObject
+export { phoneNumberObject, validatePhoneNumber, parsePhoneNumber, formatPhoneNumber }
