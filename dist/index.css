@@ -4,9 +4,7 @@
 /* Medium: 640 - 1000 */
 /* Large: 1000 + */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&family=Roboto+Mono&display=swap');
 /*** App wide CSS ***/
 body {
   box-sizing: border-box;
@@ -24,11 +22,12 @@ header {
   justify-content: center;
   align-items: center;
   grid-area: header;
+
 }
 main {
   grid-area: main;
   display: grid;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: 10% 90%;
   grid-template-areas: "input" "output";
 }
 footer {
@@ -42,8 +41,8 @@ footer {
 /*** header elements ***/
 #page_title {
   font-family: 'Bebas Neue';
-  padding: 0;
-  font-size: 2em;
+  margin-top: 1em;
+  font-size: 3em;
   letter-spacing: .1em;
 }
 
@@ -56,16 +55,18 @@ footer {
 }
 
 input {
-  font-family: 'Space Mono';
-  border: 2px solid black; 
+  font-family: 'Roboto Mono';
+  border: 2px solid #444444; 
   border-radius: 75px;
   text-align: center;
   font-size: 1.5em;
   background: #FAE5E5;
 }
+input:focus{
+  border: 2px solid #444444;
+}
 
 #output_container {
-  padding-top: 1em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
@@ -73,14 +74,35 @@ input {
   font-size: 1.5rem;
 }
 
+#message_container {
+  margin-bottom: .75em;
+}
+
+.arrow {
+  height: 1.3em;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  position: relative;
+  top: .7em;
+}
+.left-arrow {
+  left: .3em;
+  transform: rotate(0.15turn);
+}
+.right-arrow {
+  right: .3em;
+  transform: rotate(-0.15turn) scale(-1, 1);
+}
+
 #phoneLink {
   margin-bottom: .5rem;
-  text-decoration: none;
-  padding: .1em 1em;
-  border-radius: 4px;
+  padding: .2em 1.3em;
+  border-radius: 7px;
   color: black;
-  border: 1px solid #444444;
-  background: #FAE5E5;
+  background: #c3f5c3;
+}
+#phoneLink:hover {
+  transform: scale(1.2);
 }
 
 #message {
@@ -110,7 +132,8 @@ input {
   margin-right: .75rem;  
 }
 .infoValue {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
+  font-family: 'Roboto Mono'; 
 }
 
 

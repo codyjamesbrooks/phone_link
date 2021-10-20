@@ -19,25 +19,45 @@
           data-phone-link-tel-value=""
           data-phone-link-line-value="">
       <div id="input_container">
-        <input type="tel" id="number" placeholder="+1 (720) 307-6019" autofocus
+        <input type="tel" id="number" placeholder="1234567890" autofocus
         data-phone-link-target="number"
         data-action="input->phone-link#change">
       </div>
       <div id="output_container">
-        <span id="message" data-phone-link-target="message">Enter phone number</span>
+        <div id="message_container">
+          <img src="images/noun_Arrow_2841256.svg" alt="arrow" class="arrow left-arrow hidden"
+               data-phone-link-target="arrow">
+          <span id="message" data-phone-link-target="message">Enter phone number</span>
+          <img src="images/noun_Arrow_2841256.svg" alt="arrow" class="arrow right-arrow hidden"
+               data-phone-link-target="arrow">
+        </div>
         <a id="phoneLink" class="hidden" href="" data-phone-link-target="generatedLink"></a>
         <div id="information" data-phone-link-target="numberInfo" class="hidden">
           Number Break Down
-          <div class="numberInfo" data-phone-link-target="escape"></div>
-          <div class="numberInfo" data-phone-link-target="country"></div>
-          <div class="numberInfo" data-phone-link-target="area"></div>
-          <div class="numberInfo" data-phone-link-target="tel"></div>
-          <div class="numberInfo" data-phone-link-target="line"></div>
+          <div class="numberInfo">
+            <span class="infoTitle">Escape Code:</span>
+            <span class="infoValue" data-phone-link-target="escape"></span>
+          </div>
+          <div class="numberInfo">
+            <span class="infoTitle">Country Code:</span>
+            <span class="infoValue" data-phone-link-target="country"></span>
+          </div>
+          <div class="numberInfo">
+            <span class="infoTitle">Area Code:</span>
+            <span class="infoValue" data-phone-link-target="area"></span>
+          </div>
+          <div class="numberInfo">
+            <span class="infoTitle">Tel Prefix:</span>
+            <span class="infoValue" data-phone-link-target="tel"></span>
+          </div>
+          <div class="numberInfo">
+            <span class="infoTitle">Line Number:</span>
+            <span class="infoValue" data-phone-link-target="line"></span>
+          </div>
         </div>
       </div>
     </main>
     <footer>
-      <h2>coded by: cody</h2>
     </footer>
   </body>
 </html>
