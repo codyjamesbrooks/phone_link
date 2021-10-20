@@ -6,7 +6,7 @@ const webpackConfig = require("./webpack.config");
 
 const app = express()
 const distPath = path.join(__dirname, "dist");
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 app.use(express.static(distPath))
 app.use(webpackMiddleware(webpack(webpackConfig)))
