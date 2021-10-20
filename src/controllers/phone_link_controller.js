@@ -9,7 +9,7 @@ export default class extends Controller {
                     line: String, }
   static classes = [ 'hidden' ]
   static targets = [ 'number', 'message', 'generatedLink', 'numberInfo', 
-                     'escape', 'country', 'area', 'tel', 'line'];
+                     'escape', 'country', 'area', 'tel', 'line', 'arrow'];
   
              
   get number() {
@@ -33,19 +33,19 @@ export default class extends Controller {
   }
 
   telValueChanged(value) {
-    this.telTarget.innerHTML = this.formatFormatNumberInfoTitle('Tel Prefix') + this.formatNumberInfoValue(value)
+    this.telTarget.innerHTML = value
   }
   lineValueChanged(value) {
-    this.lineTarget.innerHTML = this.formatFormatNumberInfoTitle('Line Number') + this.formatNumberInfoValue(value)
+    this.lineTarget.innerHTML = value
   }
   areaValueChanged(value) {
-    this.areaTarget.innerHTML = this.formatFormatNumberInfoTitle('Area Code') + this.formatNumberInfoValue(value)
+    this.areaTarget.innerHTML = value
   }
   countryValueChanged(value) {
-    this.countryTarget.innerHTML = this.formatFormatNumberInfoTitle('Country Code') + this.formatNumberInfoValue(value)
+    this.countryTarget.innerHTML = value
   }
   escapeValueChanged(value) {
-    this.escapeTarget.innerHTML = this.formatFormatNumberInfoTitle('Escape Code') + this.formatNumberInfoValue(value)
+    this.escapeTarget.innerHTML = value
   }
 
   change() {
@@ -61,10 +61,10 @@ export default class extends Controller {
       let formattedPhoneNumber = potentialNumber.format()
       this.createPhoneLink(formattedPhoneNumber)
 
-      this.revalElements(this.generatedLink, this.numberInfo)
+      this.revalElements(this.generatedLink, this.numberInfo, ...this.arrowTargets)
     } else {
       // Phone number isn't valid yet. 
-      this.hideElements(this.generatedLink, this.numberInfo)
+      this.hideElements(this.generatedLink, this.numberInfo, ...this.arrowTargets)
     }
   }
 
@@ -79,10 +79,10 @@ export default class extends Controller {
   updateMessageDisplay() {
     if (this.number.length === 0) {
       this.message.innerHTML = "Enter phone number"
-    } else if (this.number.length <= 6) {
-      this.message.innerHTML = "Continue to input the phone number"
+    } else if (this.number.length < 10) {
+      this.message.innerHTML = "Keep going"
     } else if (this.number.length <= 12) {
-      this.message.innerHTML = "That's a start, lets see what you got"
+      this.message.innerHTML = "click & call"
     } else if (this.number.length === 13) {
       this.message.interHTML = "One heck of a link you got there"
     }
@@ -91,12 +91,5 @@ export default class extends Controller {
   createPhoneLink(fomattedPhoneNumber) {
     this.generatedLink.setAttribute("href", `tel:${this.number}`);
     this.generatedLink.innerHTML = fomattedPhoneNumber
-  }
-
-  formatFormatNumberInfoTitle(title) {
-    return `<span class="infoTitle">${title}:</span>`
-  }
-  formatNumberInfoValue(value) {
-    return `<span class="infoValue">${value}</span>`
   }
 }
