@@ -19,9 +19,13 @@
           data-phone-link-tel-value=""
           data-phone-link-line-value="">
       <div id="input_container">
-        <input type="tel" id="number" placeholder="1234567890" autofocus
-        data-phone-link-target="number"
-        data-action="input->phone-link#change">
+        <input type="tel" id="numberInput" placeholder="1234567890" autofocus
+          data-phone-link-target="number"
+          data-action="input->phone-link#change">
+        <input type="number" id="extInput" placeholder="extension"
+          data-phone-link-target="extension"
+          data-phone-link-ext-value=""
+          data-action="input->phone-link#extension">
       </div>
       <div id="output_container">
         <div id="message_container">
@@ -33,7 +37,6 @@
         </div>
         <a id="phoneLink" class="hidden" href="" data-phone-link-target="generatedLink"></a>
         <div id="information" data-phone-link-target="numberInfo" class="hidden">
-          Number Break Down
           <div class="numberInfo">
             <span class="infoTitle">Escape Code:</span>
             <span class="infoValue" data-phone-link-target="escape"></span>
