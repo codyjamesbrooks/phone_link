@@ -16,6 +16,7 @@ body {
   background: rgba(234, 92, 66, .5);
   font-family: Roboto, Tahoma, sans-serif;
   color: #444444;
+  overflow-y: scroll;
 }
 header {
   display: flex;
@@ -27,7 +28,7 @@ header {
 main {
   grid-area: main;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 11% 89%;
   grid-template-areas: "input" "output";
 }
 footer {
@@ -42,7 +43,7 @@ footer {
 #page_title {
   font-family: 'Bebas Neue', Tahoma, sans-serif;
   margin-top: 1em;
-  font-size: 3em;
+  font-size: 2em;
   letter-spacing: .1em;
 }
 
@@ -50,20 +51,30 @@ footer {
 #input_container {
   grid-area: input;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 input {
   font-family: 'Roboto Mono', Tahoma, sans-serif;
   border: 2px solid #444444; 
   border-radius: 75px;
   text-align: center;
-  font-size: 1.5em;
+  margin-bottom: .5em;
   background: #FAE5E5;
+  border: 1px solid black;
 }
 input:focus{
   border: 2px solid #444444;
+}
+#numberInput {
+  max-width: 200px;
+  font-size: 1.1em;
+  width: 75%;
+}
+#extInput {
+  width: 22%;
+  font-size: .7em;
 }
 
 #output_container {
@@ -73,8 +84,8 @@ input:focus{
   align-items: center; 
   font-size: 1.5rem;
 }
-
 #message_container {
+  font-size: .7em;
   margin-bottom: .75em;
 }
 
@@ -95,6 +106,7 @@ input:focus{
 }
 
 #phoneLink {
+  font-size: .7em;
   margin-bottom: .5rem;
   padding: .2em 1.3em;
   border-radius: 7px;
@@ -129,11 +141,13 @@ input:focus{
 
 .infoTitle {
   display: inline-block;
-  width: 50%; 
+  font-size: .75em;
+  width: 50%;
+  white-space: nowrap;
+  overflow: visible;
 }
 .infoValue {
-
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-family: 'Roboto Mono'; 
 }
 
@@ -141,14 +155,14 @@ input:focus{
 /* Medium Screen 400-600 */
  @media only screen and (min-width: 600px) {
   #page_title {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 } 
 
 /* Large Screen 600-1000 */
  @media only screen and (min-width: 1000px) {
   #page_title {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 } 
 
