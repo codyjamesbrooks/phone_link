@@ -14,7 +14,7 @@ body {
   grid-template-rows: 15% 80% 5%;
   grid-template-areas: "header" "main" "footer";
   background: rgba(234, 92, 66, .5);
-  font-family: Roboto;
+  font-family: Roboto, Tahoma, sans-serif;
   color: #444444;
 }
 header {
@@ -40,7 +40,7 @@ footer {
 
 /*** header elements ***/
 #page_title {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', Tahoma, sans-serif;
   margin-top: 1em;
   font-size: 3em;
   letter-spacing: .1em;
@@ -55,7 +55,7 @@ footer {
 }
 
 input {
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto Mono', Tahoma, sans-serif;
   border: 2px solid #444444; 
   border-radius: 75px;
   text-align: center;
@@ -122,16 +122,17 @@ input:focus{
   width: 100%;
   max-width: 384px;
   margin-top: .5rem;
-  padding: 1% 2%;
-  border: 1px solid black; 
+  padding: 1% 2%; 
   border-radius: 3px;
   background:#FAE5E5;
 }
 
 .infoTitle {
-  margin-right: .75rem;  
+  display: inline-block;
+  width: 50%; 
 }
 .infoValue {
+
   font-size: 1.5rem;
   font-family: 'Roboto Mono'; 
 }
