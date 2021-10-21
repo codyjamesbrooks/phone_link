@@ -1,16 +1,17 @@
 import { Controller } from "@hotwired/stimulus";
-import { validatePhoneNumber, parsePhoneNumber, formatPhoneNumber } from "../phone_number"; 
+import { validatePhoneNumber, parsePhoneNumber, formatPhoneNumber } from "../phone_number.js"; 
 
 export default class extends Controller {
   static values = { escape: String, 
                     country: String,
                     area: String,
                     tel: String, 
-                    line: String, }
+                    line: String,
+                    ext: String, }
   static classes = [ 'hidden' ]
   static targets = [ 'number', 'message', 'generatedLink', 'numberInfo', 
-                     'escape', 'country', 'area', 'tel', 'line', 'arrow'];
-  
+                     'escape', 'country', 'area', 'tel', 'line', 'arrow', 'extension'];
+
   get number() {
     return this.numberTarget.value.replace(/[^\d\+]/g, '')
   }
@@ -29,6 +30,16 @@ export default class extends Controller {
   }
   revalElements(...elements) {
     elements.forEach((element) => element.classList.remove(this.hiddenClass))
+  }
+
+  extValueChanged(value) {
+    console.log()
+    if (validatePhoneNumber(this.number)) {
+      console.log("in here")
+      let parsedNumber = parsePhoneNumber(this.number);
+      let formattedPhone = formatPhoneNumber(parsedNumber)
+      this.createPhoneLink(formattedPhone, value)
+    }  
   }
 
   telValueChanged(value) {
@@ -63,6 +74,10 @@ export default class extends Controller {
     }
   }
 
+  extension() {
+    this.extValue= this.extensionTarget.value;
+  }
+
   setPhoneNumberInformation(phoneInfo) {
     if (phoneInfo.line != this.lineValue) { this.lineValue= phoneInfo.line }
     if (phoneInfo.tel != this.telValue) { this.telValue= phoneInfo.tel}
@@ -83,8 +98,13 @@ export default class extends Controller {
     }
   }
 
-  createPhoneLink(fomattedPhoneNumber) {
-    this.generatedLink.setAttribute("href", `tel:${this.number}`);
-    this.generatedLink.innerHTML = fomattedPhoneNumber
+  createPhoneLink(fomattedPhone, ext="") {
+    let telValue = `${this.number}`
+    telValue += !!ext ? `,${ext}` : ""
+    this.generatedLink.setAttribute("href", `tel:${telValue}`);
+    
+    let linkText = fomattedPhone
+    linkText += !!ext ? ` Ext: ${ext}` : ""
+    this.generatedLink.innerHTML = linkText
   }
 }
