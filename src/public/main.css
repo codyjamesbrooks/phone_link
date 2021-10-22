@@ -1,0 +1,84 @@
+
+
+body {
+  margin: 0;
+  background: #577399;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  padding-top: 20px;
+  width: 100vw;
+  height: auto;
+}
+
+.app-wrapper {
+  text-align: center;
+  min-width: 380px;
+  max-width: 700px;
+  margin: auto; 
+}
+#menu-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: initial;
+  border: 1px solid black;
+}
+
+.menu-label {
+  padding: 0 .5em 0 .4em;
+  background: #F7F7FF;
+  border: 1px solid black;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-number {
+  background: #495867;
+  margin-right: .3em;
+  color: #F7F7FF;
+  border: 1px solid black;
+}
+.menu-title {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: .5em
+}
+.current-value {
+  margin-right: .25em;
+  font-size: 1.2em;
+}
+.drop-down {
+  text-decoration: none;
+  font-size: .8em;
+  color: #FE5F55;
+  border: 1px solid black;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+
+/* These selectors are used for by the pancake-menu controller */
+.colapsed .menu-contents {
+  display: none; 
+}
+.colapsed .menu-label {
+  background: #BDD5EA;
+  color: #495867;
+}
+
+
+/*  CSS Rules for the menu contents */
+.menu-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3em;
+  padding: 0 .5em 0 .4em;
+  width: 100%;
+  border: 5px solid black;
+  background-color: #F7F7FF;
+}
+.menu-contents label {
+  margin-right: .4em;
+}

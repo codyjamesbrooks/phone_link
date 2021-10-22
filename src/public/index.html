@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <script src="bundle.js" async></script>
+</head>
+<body>
+  <div class=app-wrapper>
+    <h1>Create a link to call</h1>
+    <div data-controller="pancake-menu" id="menu-wrapper"
+         data-pancake-menu-index-value="2"
+         data-pancake-menu-colapsed-class="colapsed">
+      <div data-pancake-menu-target="option"
+           data-controller="number-input"
+           data-number-input-number-value="+">
+        <div class="menu-label">
+          <div class="container">
+            <span class="current-value" data-number-input-target="current"></span>
+            <a href="#" class="drop-down" data-action="pancake-menu#select" data-index="0">▼</a>            
+          </div>
+        </div>
+        <div class="menu-contents">
+          <input data-number-input-target="input" autofocus value="" data-action="number-input#inputChange">
+        </div>
+      </div>
+      <div data-pancake-menu-target="option"
+           data-controller="number-input country"
+           data-number-input-number-value="1"
+           data-coutry-flag-value="US">
+        <div class="menu-label">
+          <div class="container">
+            <span class="current-value" data-number-input-target="current"></span>
+            <a href="#" class="drop-down" data-action="pancake-menu#select" data-index="1">▼</a>
+          </div>
+        </div>
+        <div class="menu-contents">
+          <label for="countries">Select the Country you are trying to call</label>
+          <select id="countries" data-country-target="countries"></select>
+          <input data-number-input-target="input" autofocus value="" data-action="number-input#inputChange">
+        </div>
+      </div>
+      <div data-pancake-menu-target="option"
+           data-controller="number-input"
+           data-number-input-number-value="">
+        <div class="menu-label">
+          <div class="container">
+            <span class="current-value" data-number-input-target="current"></span>
+            <a href="#" class="drop-down" data-action="pancake-menu#select" data-index="2">▼</a>
+          </div>
+        </div>
+        <div class="menu-contents">
+          <h4>Enter the phone number you want to call</h4>
+          <div class="container">
+            <label for="phone-number">Enter Phone Number</label>
+            <input id="phone-number" data-number-input-target="input" autofocus value="" data-action="number-input#inputChange">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="output-wrapper">
+    </div>
+  </div>
+</body>
+</html>
