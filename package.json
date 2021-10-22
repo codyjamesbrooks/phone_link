@@ -1,0 +1,8 @@
+{
+  "name": "phone_link",
+  "version": "1.0.0",
+  "description": "An educational phone link generator",
+  "main": "index.js",
+  "author": "Cody Brooks",
+  "license": "MIT"
+}
