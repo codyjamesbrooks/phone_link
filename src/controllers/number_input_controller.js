@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   inputChange() {
+    console.log("firing")
     this.numberValue= this.input;
   }
 

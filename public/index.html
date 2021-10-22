@@ -13,7 +13,8 @@
          data-pancake-menu-colapsed-class="colapsed">
       <div data-pancake-menu-target="option"
            data-controller="number-input"
-           data-number-input-number-value="+">
+           data-number-input-number-value="+"
+           class="option-wrapper">
         <div class="menu-label">
           <div class="container">
             <span class="current-value" data-number-input-target="current"></span>
@@ -21,13 +22,12 @@
           </div>
         </div>
         <div class="menu-contents">
-          <input data-number-input-target="input" autofocus value="" data-action="number-input#inputChange">
         </div>
       </div>
       <div data-pancake-menu-target="option"
            data-controller="number-input country"
            data-number-input-number-value="1"
-           data-coutry-flag-value="US">
+           class="option-wrapper">
         <div class="menu-label">
           <div class="container">
             <span class="current-value" data-number-input-target="current"></span>
@@ -36,13 +36,16 @@
         </div>
         <div class="menu-contents">
           <label for="countries">Select the Country you are trying to call</label>
-          <select id="countries" data-country-target="countries"></select>
-          <input data-number-input-target="input" autofocus value="" data-action="number-input#inputChange">
+          <select id="countries" data-country-target="countries" data-action="country#choose"></select>
+          <input data-number-input-target="input" autofocus readonly value="" 
+                 data-country-target="output"
+                 data-action="number-input#inputChange"> 
         </div>
       </div>
       <div data-pancake-menu-target="option"
            data-controller="number-input"
-           data-number-input-number-value="">
+           data-number-input-number-value=""
+           class="option-wrapper">
         <div class="menu-label">
           <div class="container">
             <span class="current-value" data-number-input-target="current"></span>

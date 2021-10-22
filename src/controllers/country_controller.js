@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 const countryCodeData = require('../../public/images/country_data.json')
 
 export default class extends Controller {
-  static targets = [ "countries" ]
+  static targets = [ "countries", "output" ]
   initialize() {
     for (const slug in countryCodeData) {
       let name = countryCodeData[slug]['country_name']
@@ -10,4 +10,8 @@ export default class extends Controller {
       this.countriesTarget.add(new Option(`${slug} - ${name}`, code));
     }
   }
+  choose(event) {
+    this.outputTarget.value = this.countriesTarget.value;
+    this.outputTarget.dispatchEvent(new Event("input"));
+  } 
 }
