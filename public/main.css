@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   background: #577399;
@@ -9,27 +7,142 @@ body {
   width: 100vw;
   height: auto;
 }
-
 .app-wrapper {
   text-align: center;
   min-width: 380px;
   max-width: 700px;
   margin: auto; 
 }
+
 #menu-wrapper {
   width: 100%;
   align-items: initial;
   display: flex;
-  border: 1px solid black;
+  flex-direction: column;
+  margin-bottom: 3em;
 }
-.option-wrapper {
-  border: 1px solid black;
+
+/* flex container for items of a different height */
+.container {
+  display: flex;
+  align-items: center;
 }
+
+
+/* Nav Tabs CSS */
+.menu-nav {
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+}
+.tab {
+  height: 1.5em;
+  border: 2px solid black;
+  padding: 0 .5em .2em .4em;
+  text-align: center;
+  background: #BDD5EA;
+  color: #495867;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.5em;
+  margin-right: .3em;
+}
+.tab.selected {
+  background: #F7F7FF;
+  color: #293241;
+  border-bottom: none;
+}
+.drop-down {
+  text-decoration: none;
+  color: #FE5F55;
+}
+
+
+/* Menu Output CSS */
+.menu-contents.selected {
+  border-radius: 0 5px 5px 5px;
+  display: block;
+}
+.menu-contents {
+  padding: 1em .5em;
+  border: 2px solid #293241;
+  border-top: none;
+  background: #F7F7FF;
+  width: inherit; 
+  display: none;
+}
+.menu-contents h3 {
+  margin-top: 0;;
+}
+
+
+/* CSS for the information */
+.information .container {
+  justify-content: center;
+  margin-bottom: .3em;
+}
+.sample-number {
+  height: 1em;
+  width: 1em;
+  margin-right: .2em;
+  border-radius: 50%;
+  padding: .1em .1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.area-code {
+  background: #8cb369;
+}
+.info-bubble {
+  width: 7em;
+  margin-right: .3em;
+  border-radius: 5px;
+  padding: .4em .3em;
+}
+.info-title {
+  display: block;
+  margin-bottom: .3em;
+}
+
+
+.prefix-code {
+  background: #f4e285;
+}
+.line-code {
+  background: #f4a259;
+}
+.country-code {
+  background: #5b8e7d;
+}
+.sample-block-3 {
+  height: 1em;
+  width: 2em;
+  background: #bc4b51;
+  margin: 0 .1em;  
+}
+.sample-block-4 {
+  height: 1em;
+  width: 2.6em;
+  background: #bc4b51;
+  margin: 0 .1em;  
+}
+
+
+
+/* Link output CSS */
+#output-wrapper {
+  background: #F7F7FF;
+  border: 2px solid #293241;
+  border-radius: 0 5px 5px 5px;
+  padding: 1em .5em;
+}
+
+
 .menu-label {
   height: 1.5em;
   padding: 0 .5em 0 .4em;
-  background: #F7F7FF;
-  border: 1px solid black;
+  
+
   border-bottom: none;
   border-radius: 5px 5px;
   font-size: 2em;
@@ -45,38 +158,4 @@ body {
   margin-right: .25em;
   font-size: 1.2em;
 }
-.drop-down {
-  text-decoration: none;
-  font-size: .8em;
-  color: #FE5F55;
-  border: 1px solid black;
-}
-.container {
-  display: flex;
-  align-items: center;
-}
 
-/* These selectors are used for by the pancake-menu controller */
-.colapsed .menu-contents {
-  display: none; 
-}
-.colapsed .menu-label {
-  background: #BDD5EA;
-  color: #495867;
-}
-
-
-/*  CSS Rules for the menu contents */
-.menu-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.3em;
-  padding: 0 .5em 0 .4em;
-  width: inherit;
-  background-color: #F7F7FF;
-}
-.menu-contents label {
-  margin-right: .4em;
-  border-bottom: unset;
-}
