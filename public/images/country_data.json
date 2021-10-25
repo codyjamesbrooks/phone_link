@@ -13,11 +13,11 @@
   },
   "AG": {
     "country_name": "Antigua and Barbuda",
-    "country_code": "+1-268"
+    "country_code": "268"
   },
   "AI": {
     "country_name": "Anguilla",
-    "country_code": "+1-264"
+    "country_code": "264"
   },
   "AL": {
     "country_name": "Albania",
@@ -37,7 +37,7 @@
   },
   "AS": {
     "country_name": "American Samoa",
-    "country_code": "+1-684"
+    "country_code": "684"
   },
   "AT": {
     "country_name": "Austria",
@@ -53,7 +53,7 @@
   },
   "AX": {
     "country_name": "Åland Islands",
-    "country_code": "+358-18"
+    "country_code": "358-18"
   },
   "AZ": {
     "country_name": "Azerbaijan",
@@ -65,7 +65,7 @@
   },
   "BB": {
     "country_name": "Barbados",
-    "country_code": "+1-246"
+    "country_code": "246"
   },
   "BD": {
     "country_name": "Bangladesh",
@@ -101,7 +101,7 @@
   },
   "BM": {
     "country_name": "Bermuda",
-    "country_code": "+1-441"
+    "country_code": "441"
   },
   "BN": {
     "country_name": "Brunei",
@@ -121,7 +121,7 @@
   },
   "BS": {
     "country_name": "Bahamas",
-    "country_code": "+1-242"
+    "country_code": "242"
   },
   "BT": {
     "country_name": "Bhutan",
@@ -229,11 +229,11 @@
   },
   "DM": {
     "country_name": "Dominica",
-    "country_code": "+1-767"
+    "country_code": "767"
   },
   "DO": {
     "country_name": "Dominican Republic",
-    "country_code": "+1-809"
+    "country_code": "809"
   },
   "DZ": {
     "country_name": "Algeria",
@@ -301,7 +301,7 @@
   },
   "GD": {
     "country_name": "Grenada",
-    "country_code": "+1-473"
+    "country_code": "473"
   },
   "GE": {
     "country_name": "Georgia",
@@ -313,7 +313,7 @@
   },
   "GG": {
     "country_name": "Guernsey",
-    "country_code": "+44-1481"
+    "country_code": "44-1481"
   },
   "GH": {
     "country_name": "Ghana",
@@ -353,7 +353,7 @@
   },
   "GU": {
     "country_name": "Guam",
-    "country_code": "+1-671"
+    "country_code": "671"
   },
   "GW": {
     "country_name": "Guinea-Bissau",
@@ -397,7 +397,7 @@
   },
   "IM": {
     "country_name": "Isle of Man",
-    "country_code": "+44-1624"
+    "country_code": "44-1624"
   },
   "IN": {
     "country_name": "India",
@@ -425,11 +425,11 @@
   },
   "JE": {
     "country_name": "Jersey",
-    "country_code": "+44-1534"
+    "country_code": "44-1534"
   },
   "JM": {
     "country_name": "Jamaica",
-    "country_code": "+1-876"
+    "country_code": "876"
   },
   "JO": {
     "country_name": "Jordan",
@@ -461,7 +461,7 @@
   },
   "KN": {
     "country_name": "Saint Kitts and Nevis",
-    "country_code": "+1-869"
+    "country_code": "869"
   },
   "KP": {
     "country_name": "North Korea",
@@ -477,7 +477,7 @@
   },
   "KY": {
     "country_name": "Cayman Islands",
-    "country_code": "+1-345"
+    "country_code": "345"
   },
   "KZ": {
     "country_name": "Kazakhstan",
@@ -493,7 +493,7 @@
   },
   "LC": {
     "country_name": "Saint Lucia",
-    "country_code": "+1-758"
+    "country_code": "758"
   },
   "LI": {
     "country_name": "Liechtenstein",
@@ -577,7 +577,7 @@
   },
   "MP": {
     "country_name": "Northern Mariana Islands",
-    "country_code": "+1-670"
+    "country_code": "670"
   },
   "MQ": {
     "country_name": "Martinique",
@@ -589,7 +589,7 @@
   },
   "MS": {
     "country_name": "Montserrat",
-    "country_code": "+1-664"
+    "country_code": "664"
   },
   "MT": {
     "country_name": "Malta",
@@ -709,7 +709,7 @@
   },
   "PR": {
     "country_name": "Puerto Rico",
-    "country_code": "1-787"
+    "country_code": "787"
   },
   "PS": {
     "country_name": "Palestine",
@@ -837,7 +837,7 @@
   },
   "TC": {
     "country_name": "Turks and Caicos Islands",
-    "country_code": "+1-649"
+    "country_code": "649"
   },
   "TD": {
     "country_name": "Chad",
@@ -881,7 +881,7 @@
   },
   "TT": {
     "country_name": "Trinidad and Tobago",
-    "country_code": "+1-868"
+    "country_code": "868"
   },
   "TV": {
     "country_name": "Tuvalu",
@@ -921,7 +921,7 @@
   },
   "VC": {
     "country_name": "Saint Vincent and the Grenadines",
-    "country_code": "+1-784"
+    "country_code": "784"
   },
   "VE": {
     "country_name": "Venezuela",
@@ -929,11 +929,11 @@
   },
   "VG": {
     "country_name": "British Virgin Islands",
-    "country_code": "+1-284"
+    "country_code": "284"
   },
   "VI": {
     "country_name": "United States Virgin Islands",
-    "country_code": "+1-340"
+    "country_code": "340"
   },
   "VN": {
     "country_name": "Vietnam",
