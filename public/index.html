@@ -6,62 +6,114 @@
   <script src="bundle.js" async></script>
 </head>
 <body>
-  <div class=app-wrapper>
+  <div class=app-wrapper data-controller="number"
+       data-number-country-value="1"
+       data-number-escape-value="+"
+       data-number-phone-value="">
     <h1>Create a link to call</h1>
-    <div data-controller="pancake-menu" id="menu-wrapper"
-         data-pancake-menu-index-value="2"
-         data-pancake-menu-colapsed-class="colapsed">
-      <div data-pancake-menu-target="option"
-           data-controller="number-input"
-           data-number-input-number-value="+"
-           class="option-wrapper">
-        <div class="menu-label">
-          <div class="container">
-            <span class="current-value" data-number-input-target="current"></span>
-            <a href="#" class="drop-down" data-action="pancake-menu#select" data-index="0">▼</a>            
-          </div>
+    <div data-controller="menu"
+         data-menu-index-value="2"
+         data-menu-selected-class="selected"
+         id="menu-wrapper">
+      <div class="menu-nav">
+        <div data-menu-target="option" class="tab"
+             data-action="click->menu#select" data-index="0">
+            <span class="current-value" data-number-target="escapePreview"></span>
         </div>
-        <div class="menu-contents">
+        <div data-menu-target="option" class="tab"
+             data-action="click->menu#select" data-index="1">
+            <span class="current-value" data-number-target="countryPreview"></span>         
         </div>
-      </div>
-      <div data-pancake-menu-target="option"
-           data-controller="number-input country"
-           data-number-input-number-value="1"
-           class="option-wrapper">
-        <div class="menu-label">
-          <div class="container">
-            <span class="current-value" data-number-input-target="current"></span>
-            <a href="#" class="drop-down" data-action="pancake-menu#select" data-index="1">▼</a>
-          </div>
-        </div>
-        <div class="menu-contents">
-          <label for="countries">Select the Country you are trying to call</label>
-          <select id="countries" data-country-target="countries" data-action="country#choose"></select>
-          <input data-number-input-target="input" autofocus readonly value="" 
-                 data-country-target="output"
-                 data-action="number-input#inputChange"> 
+        <div data-menu-target="option" class="tab"
+             data-action="click->menu#select" data-index="2">
+            <span class="current-value" data-number-target="phonePreview">Phone</span>        
         </div>
       </div>
-      <div data-pancake-menu-target="option"
-           data-controller="number-input"
-           data-number-input-number-value=""
-           class="option-wrapper">
-        <div class="menu-label">
-          <div class="container">
-            <span class="current-value" data-number-input-target="current"></span>
-            <a href="#" class="drop-down" data-action="pancake-menu#select" data-index="2">▼</a>
+      <div class="output-wrapper">
+        <div class="menu-contents" data-menu-target="output">
+          <!-- ESCAPE MENU -->
+          <label for="escape">Select the escape code you need to use</label>
+          <input id="escape" autofocus readonly value=""
+                 data-number-target="escapeInput">
+        </div>
+        <div class="menu-contents" data-controller="country"
+             data-menu-target="output">
+          <!-- COUNTRIES MENU -->
+          <h3>Calling a country other than your own?</h3>
+          <label for="countries">Select the Country</label>
+          <select id="countries"
+                  data-country-target="countries"
+                  data-number-target="countryInput"
+                  data-action="number#countryChange">
+          </select>
+          <div class="information">
+            <h5>What is a country code?</h5>
+            <p>Country codes were put into place in the 1960's. They range anywhere from 1 to 3 digits in length, and they ensure that your phone call reaches the correct phone circuit (i.e. The correct country!)</p>
+            <p>The US, and 19 other countries all share 001 as their country code</p>
+            <div class="container">
+              <span class="sample-number country-code">0</span>
+              <span class="sample-number country-code">3</span>
+              <span class="sample-number country-code">9</span> 
+              (<span class="sample-block-3"></span>) 
+              <span class="sample-block-3"></span>-
+              <span class="sample-block-4"></span>
+            </div>
+            <div class="container">
+              <div class="info-bubble country-code">
+                <span class="exit-text">Dial 039 to call an Italian phone number</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="menu-contents">
-          <h4>Enter the phone number you want to call</h4>
-          <div class="container">
-            <label for="phone-number">Enter Phone Number</label>
-            <input id="phone-number" data-number-input-target="input" autofocus value="" data-action="number-input#inputChange">
+        <div class="menu-contents" data-menu-target="output">
+          <!-- NUMBER MENU -->
+          <h3>Enter the phone number</h3>
+          <label for="phone-number">Enter Phone Number</label>
+          <input id="phone-number" type="tel" maxlength="14" autofocus value="" 
+                 data-number-target="phoneInput"
+                 data-action="number#phoneChange">
+          <div class="information">
+            <h5>What makes up a phone number?</h5>
+            <p>Your phone number is comprised of 10 different digits. Those 10 digits help locate your phone in this wide wide world. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <div class="container">
+              (<span class="sample-number area-code">1</span>
+              <span class="sample-number area-code">2</span>
+              <span class="sample-number area-code">3</span>) 
+              <span class="sample-number prefix-code">4</span>
+              <span class="sample-number prefix-code">5</span>
+              <span class="sample-number prefix-code">6</span>-
+              <span class="sample-number line-code">7</span>
+              <span class="sample-number line-code">8</span>
+              <span class="sample-number line-code">9</span>
+              <span class="sample-number line-code">0</span>
+            </div>
+            <div class="container">
+              <div class="info-bubble area-code">
+                <span class="info-title">Area Code</span>
+                <span class="info-text">Sed posuere consectetur est at lobortis.</span>
+              </div>
+              <div class="info-bubble prefix-code">
+                <span class="info-title">Telephone Prefix</span>
+                <span class="info-text">Donec id elit non mi porta gravida at eget metus.</span>
+              </div>
+              <div class="info-bubble line-code">
+                <span class="info-title">Line Number</span>
+                <span class="info-text">Etiam porta sem malesuada magna mollis euismod.</span>
+              </div>
+            </div>  
           </div>
+
         </div>
       </div>
     </div>
-    <div id="output-wrapper">
+    <!-- Bottom Screen Output -->
+    <div id="output-wrapper" data-controller="clipboard">
+      <div class="link" >
+        <h4>Click the link to call input number.</h4>
+        <a href="#" data-clipboard-target="link"
+                    data-number-target="link"></a>
+        <button data-action="clipboard#copy">Click to copy</button>
+      </div>
     </div>
   </div>
 </body>
