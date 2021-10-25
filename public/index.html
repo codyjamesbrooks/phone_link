@@ -32,9 +32,13 @@
       <div class="output-wrapper">
         <div class="menu-contents" data-menu-target="output">
           <!-- ESCAPE MENU -->
-          <label for="escape">Select the escape code you need to use</label>
-          <input id="escape" autofocus readonly value=""
-                 data-number-target="escapeInput">
+          <h3>Your current escape code is '+'</h3>
+          <div class="information">
+            <h5>What does that even mean?</h5>
+            <p>An escape code tells your phone network that you are attempting to place a call outside of the country that you are currently located in. It is sometimes reffered to as an 'Exit Code' or as 'International Access Code'.</p>
+            <h5>What is my countries escape code?</h5>
+            <p>Conviently a majority of countries allow you to use '+' in place of that countries actual escape code. You can think of '+' as simply translating to 'I would like to call outside of the country that I am currently located in'</p>
+          </div> 
         </div>
         <div class="menu-contents" data-controller="country"
              data-menu-target="output">
@@ -68,29 +72,21 @@
         <div class="menu-contents" data-menu-target="output">
           <!-- NUMBER MENU -->
           <h3>Enter the phone number</h3>
-          <label for="phone-number">Enter Phone Number</label>
           <input id="phone-number" type="tel" maxlength="14" autofocus value="" 
                  data-number-target="phoneInput"
                  data-action="number#phoneChange">
           <div class="information">
             <h5>What makes up a phone number?</h5>
-            <p>Your phone number is comprised of 10 different digits. Those 10 digits help locate your phone in this wide wide world. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <p>Your phone number is comprised of 10 different digits. Those 10 digits help locate your phone in this wide wide world. It does this by using the three different portions of a telephone number: Area Code, Telephone Prefix, and the Line Number. Each group of numbers help indicate a smaller geographical in which the phone will be located</p>
             <div class="container">
-              (<span class="sample-number area-code">1</span>
-              <span class="sample-number area-code">2</span>
-              <span class="sample-number area-code">3</span>) 
-              <span class="sample-number prefix-code">4</span>
-              <span class="sample-number prefix-code">5</span>
-              <span class="sample-number prefix-code">6</span>-
-              <span class="sample-number line-code">7</span>
-              <span class="sample-number line-code">8</span>
-              <span class="sample-number line-code">9</span>
-              <span class="sample-number line-code">0</span>
+              (<span class="sample-number area-code">123</span>) 
+              <span class="sample-number prefix-code">456</span>-
+              <span class="sample-number line-code">7890</span>
             </div>
             <div class="container">
               <div class="info-bubble area-code">
                 <span class="info-title">Area Code</span>
-                <span class="info-text">Sed posuere consectetur est at lobortis.</span>
+                <span class="info-text">City sized region of your phones location</span>
               </div>
               <div class="info-bubble prefix-code">
                 <span class="info-title">Telephone Prefix</span>
