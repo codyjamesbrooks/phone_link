@@ -11,6 +11,11 @@ const port = process.env.PORT || 9000
 app.use(express.static(publicPath))
 app.use(webpackMiddleware(webpack(webpackConfig)))
 
+app.get('/result', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/result.html'))
+})
+
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
