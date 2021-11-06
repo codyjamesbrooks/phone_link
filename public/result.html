@@ -5,19 +5,18 @@
   <link rel="stylesheet" href="main.css">
   <script src="bundle.js" async></script>
 </head>
-<body class="home">
+<body class="result">
   <nav>
     <div id="logo-container">
       <span>Num</span>
-      <img class="nunchuck" id="nunchuck-icon-white" src="images/nunchucks_white.svg" alt="Nunchuck Sketch">
+      <img class="nunchuck" id="nunchuck-icon-black" src="images/nunchucks_black.svg" alt="Nunchuck Sketch">
       <span>Chuck</span>
     </div>
-    <img id="flagrant-logo" src="images/Flagrant_logo_white.svg" alt="Flagrant Logo">
+    <img id="flagrant-logo" src="images/Flagrant_logo_red.svg" alt="Flagrant Logo">
   </nav>
-  <main data-controller="paint-splat"
-        data-paint-spalt-color-value="#FAE5E5"
+  <main data-controller="phone-link paint-splat" 
         data-paint-splat-transition-class="transition">
-    <div class="container">
+    <div class="container" data-toggle-target="landing">
       <h1>Enter Phone Number</h1>
       <input id="phone-input" type="tel" autofocus value="(123) 456-7890">
       <button data-action="paint-splat#trigger" class="submit">GO</button>
