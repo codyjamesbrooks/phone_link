@@ -5,30 +5,31 @@ export default class extends Controller {
   static classes = [ 'transition' ]
 
   initialize() {
-
+    this.maxDiameter = 1.5 * Math.max(window.innerHeight, window.innerWidth)
   }
 
   trigger() {
     this.createSplat()
-    // const splat = this.createSplat()
-    // this.appendSplat(splat)
-    // this.startGrowing(splat)
-    console.log(this.colorValue)
+    this.startGrowing()
   }
   
   createSplat() {
-    const splat = document.createElement('div')
-    splat.style.background = this.colorValue;
-    splat.classList.add(this.transitionClass)
-    splat.setAttribute('id', 'splat')
-    this.element.appendChild(splat)
+    this.splat = document.createElement('div')
+    this.splat.style.background = this.colorValue;
+    this.splat.classList.add(this.transitionClass)
+    this.splat.setAttribute("id", "splat")
+    // append spat right after the paint splat controller element. 
+    this.element.parentNode.insertBefore(this.splat, this.element.nextSibling)
   }
 
-  startGrowing(splat) {
-    let timesRun = 0;
+  splatDiameter() {
+    return parseInt(getComputedStyle(document.getElementById("splat")).height)
+  }
+
+  startGrowing() {
     this.growTimer = setInterval(() => {
-      this.increaseSize(splat)
-      if (++timesRun === 75) {
+      this.increaseSize()
+      if (this.splatDiameter() > this.maxDiameter) {
         this.stopAndDestroySplat(splat)
       }
     }, 10);
@@ -39,10 +40,9 @@ export default class extends Controller {
     document.getElementById('splat').remove()
   }
 
-  increaseSize(splat) {
-    console.log("firing")
-    let newDiameter = parseInt(getComputedStyle(splat).height) + 25
-    splat.style.height = `${newDiameter}px`
-    splat.style.width = `${newDiameter}px`
+  increaseSize() {
+    let newDiameter = this.splatDiameter() + 25
+    this.splat.style.height = `${newDiameter}px`
+    this.splat.style.width = `${newDiameter}px`
   }
 }
