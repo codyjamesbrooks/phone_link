@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
+/* ********* Page Level CSS *********** */
+
 body {
   margin: 0;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: "Roboto Condensed";
   box-sizing: border-box;
-  /* display: flex;
-  flex-direction: column; */
-  padding: 10px 15px;
+  padding: 0 15px;
   height: 100vh; 
   width: 100vw;
-
 }
 
 .home {
@@ -21,18 +24,16 @@ body {
   background: #FAE5E5;
 }
 
-
-
+/* ******** Nav Logo Style *********** */
 nav {
   display: flex;
   height: auto;
+  width: 100%;
   justify-content: space-between;
   font-size: 1em;
-  position: relative;
+  position: fixed;
   top: 0; 
 }
-
-
 .nunchuck {
   height: 54px;
   width: 58px;
@@ -44,32 +45,22 @@ nav {
 
 
 main {
-  width: auto;
-  height: auto;
-  display: flex; 
-  flex: 1;
-  /* flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  border: 1px solid black;
 }
 
-
-
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: relative;
+  height: auto; 
+  width: auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+
 h1 {
   color: #FFFFFF;
 }
-
 
 #phone-input {
   padding: 7px 5px;
@@ -88,9 +79,16 @@ h1 {
 }
 
 .transition {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0px; 
+  width: 0px;
   z-index: 2;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 
+.test {
+  width: 10px;
+  height: 10px;
+}
