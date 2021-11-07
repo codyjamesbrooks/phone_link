@@ -10,6 +10,10 @@ body {
   justify-content: center;
   font-family: "Roboto Condensed";
   box-sizing: border-box;
+<<<<<<< HEAD
+=======
+  padding: 0 15px;
+>>>>>>> bc4bd16 (CSS to fix paint drop position)
   height: 100vh; 
   width: 100vw;
 }
@@ -27,10 +31,16 @@ body {
 nav {
   display: flex;
   height: auto;
+<<<<<<< HEAD
   width: 98%;
   align-items: center;
   justify-content: space-between;
   font-size: .8em;
+=======
+  width: 100%;
+  justify-content: space-between;
+  font-size: 1em;
+>>>>>>> bc4bd16 (CSS to fix paint drop position)
   position: fixed;
   top: 0; 
 }
@@ -42,6 +52,7 @@ nav {
   display: flex;
   align-items: center;
 }
+<<<<<<< HEAD
 #flagrant-logo {
   width: 110px;
   height: 23px;
@@ -49,6 +60,18 @@ nav {
 
 .container {
   position: relative; 
+=======
+
+
+main {
+  border: 1px solid black;
+}
+
+.container {
+  position: relative;
+  height: auto; 
+  width: auto; 
+>>>>>>> bc4bd16 (CSS to fix paint drop position)
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +80,14 @@ nav {
   margin-right: 15px;
 }
 
+<<<<<<< HEAD
+=======
+
+h1 {
+  color: #FFFFFF;
+}
+
+>>>>>>> bc4bd16 (CSS to fix paint drop position)
 #phone-input {
   padding: 7px 5px;
   border-radius: 8px;
@@ -87,6 +118,7 @@ nav {
   width: 0px;
   z-index: 2;
   border-radius: 50%;
+<<<<<<< HEAD
 }
 
 /* ************************* Result ********** */
@@ -134,5 +166,11 @@ main {
 .result-icon {
   height: 55px;
   width: 55px;
+=======
+>>>>>>> bc4bd16 (CSS to fix paint drop position)
 }
 
+.test {
+  width: 10px;
+  height: 10px;
+}
