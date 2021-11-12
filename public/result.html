@@ -14,27 +14,38 @@
     </div>
     <img id="flagrant-logo" src="images/Flagrant_logo_red.svg" alt="Flagrant Logo">
   </nav>
-  <main data-controller="parameters">
-    <div>
-      <span data-parameters-target="output"></span>
+  <main data-controller="parameters clipboard">
+    <div class="result-title">
+      <span  data-parameters-target="output"></span>
     </div>
     <div class="result-container">
       <div class="result-group">
-        <img src="images/phone.svg" alt="phone icon">
+        <img src="images/phone.svg" class="result-icon" id="phone-icon" alt="phone icon">
         <div class="container">
           <span>Call the Num</span>
-          <a href="#">call</a>
+          <a class="result-highlight" href="#" 
+             data-parameters-target="callLink"
+             data-clipboard-target="link"></a>
         </div>
       </div>
       <div class="result-group">
         <div class="container">
           <span>Embed the Num</span>
-          <a href="#">Copy html to clipboard</a>
+          <span id="embed-preview">
+            &lta href=tel:"
+            <span data-parameters-target="embedPreview"></span>
+            "&gt&lt\a&gt
+          </span>
+          <a class="result-highlight" href="#" data-action="clipboard#copy">Copy html to clipboard</a>
         </div>
-        <img src="images/embed.svg" alt="webpage icon">
+        <img src="images/embed.svg" class="result-icon" alt="webpage icon">
       </div>
     </div> 
-    <div>Another</div>
+    <div>
+      <span>
+        <a href="/" class="submit">Another Num?</a>
+      </span>
+    </div>
   </main>
 </body>
 </html>

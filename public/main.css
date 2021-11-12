@@ -47,13 +47,14 @@ nav {
   height: 23px;
 }
 
-
-
 .container {
   position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-right: 15px;
 }
 
 #phone-input {
@@ -71,6 +72,11 @@ nav {
   border-radius: 5px;
   display: block;
   margin: auto;
+  background: #C4C4C4;
+  width: min-content;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #000;
 }
 
 .transition {
@@ -85,19 +91,46 @@ nav {
 
 /* ************************* Result ********** */
 main {
-  border: 1px solid black;
   text-align: center;
   width: 70%;
 }
 
 .result-container {
   display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  margin: auto;
+  justify-content: space-between;  
+  margin-bottom: 30px;
+}
+
+.result-title {
+  font-size: 3em;
+  margin-bottom: 40px;
 }
 
 .result-group {
   display: flex;
   align-items: center;
+  height: 80px;
 }
+
+.result-highlight {
+  text-decoration: none;
+  background: #DC6C6C;
+  border-radius: 15px;
+  padding: 7px 15px;
+  color: #FFF; 
+}
+
+#embed-preview {
+  background: #d98282;
+  width: 100%;
+}
+
+#phone-icon {
+  margin-right: 10px;
+}
+
+.result-icon {
+  height: 55px;
+  width: 55px;
+}
+
