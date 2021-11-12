@@ -14,13 +14,27 @@
     </div>
     <img id="flagrant-logo" src="images/Flagrant_logo_red.svg" alt="Flagrant Logo">
   </nav>
-  <main data-controller="phone-link paint-splat" 
-        data-paint-splat-transition-class="transition">
-    <div class="container" data-toggle-target="landing">
-      <h1>Enter Phone Number</h1>
-      <input id="phone-input" type="tel" autofocus value="(123) 456-7890">
-      <button data-action="paint-splat#trigger" class="submit">GO</button>
+  <main data-controller="parameters">
+    <div>
+      <span data-parameters-target="output"></span>
     </div>
+    <div class="result-container">
+      <div class="result-group">
+        <img src="images/phone.svg" alt="phone icon">
+        <div class="container">
+          <span>Call the Num</span>
+          <a href="#">call</a>
+        </div>
+      </div>
+      <div class="result-group">
+        <div class="container">
+          <span>Embed the Num</span>
+          <a href="#">Copy html to clipboard</a>
+        </div>
+        <img src="images/embed.svg" alt="webpage icon">
+      </div>
+    </div> 
+    <div>Another</div>
   </main>
 </body>
 </html>

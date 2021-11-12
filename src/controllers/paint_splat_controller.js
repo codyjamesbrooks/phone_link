@@ -3,12 +3,13 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller { 
   static values = { color: String } 
   static classes = [ 'transition' ]
-
+  
   initialize() {
     this.maxDiameter = 1.5 * Math.max(window.innerHeight, window.innerWidth)
   }
 
-  trigger() {
+  changePage(event) {
+    event.preventDefault()
     this.createSplat()
     this.startGrowing()
   }
@@ -30,14 +31,14 @@ export default class extends Controller {
     this.growTimer = setInterval(() => {
       this.increaseSize()
       if (this.splatDiameter() > this.maxDiameter) {
-        this.stopAndDestroySplat(splat)
+        this.stopEffectAndSubmitForm(splat)
       }
     }, 10);
   }
 
-  stopAndDestroySplat() {
+  stopEffectAndSubmitForm() {
     window.clearInterval(this.growTimer)
-    document.getElementById('splat').remove()
+    this.element.submit()
   }
 
   increaseSize() {

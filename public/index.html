@@ -12,15 +12,21 @@
       <img class="nunchuck" id="nunchuck-icon-white" src="images/nunchucks_white.svg" alt="Nunchuck Sketch">
       <span>Chuck</span>
     </div>
-    <img id="flagrant-logo" src="images/Flagrant_logo_white.svg" alt="Flagrant Logo">
+    <img id="flagrant-logo" src="images/flagrant_logo_white.png" alt="Flagrant Logo">
   </nav>
   <main>
-    <div class="container" data-controller="paint-splat"
-         data-paint-splat-color-value="#FAE5E5"
-         data-paint-splat-transition-class="transition">
-      <h1>Enter Phone Number</h1>
-      <input id="phone-input" type="tel" autofocus value="(123) 456-7890">
-      <button data-action="paint-splat#trigger" class="submit">GO</button>
+    <div class="container">
+      <h1>Enter Phone Number</ah1>
+      <form action="/result" data-controller="paint-splat"
+            data-paint-splat-transition-class="transition"
+            data-paint-splat-color-value="#FAE5E5">
+        <input id="phone-input" type="tel" autofocus placeholder="(123) 456-7890" 
+               name="number" maxlength="15"
+               data-controller="phone-input" data-action="phone-input#format"
+               data-phone-input-number-value="">
+        <button class="submit" type="submit"
+                data-action="paint-splat#changePage">Go</button>
+      </form>
     </div>
   </main>
 </body>
