@@ -68,7 +68,7 @@ nav {
 
 /*************************** TO DO - CHANGE BUTTON STYLE */
 .submit {
-  padding: 7px 15px;
+  padding: 7px 20px;
   border-radius: 5px;
   display: block;
   margin: auto;
@@ -123,6 +123,8 @@ main {
 #embed-preview {
   background: #d98282;
   width: 100%;
+  padding: 2px 3px;
+
 }
 
 #phone-icon {
