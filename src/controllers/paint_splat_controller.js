@@ -31,11 +31,7 @@ export default class extends Controller {
     this.growTimer = setInterval(() => {
       this.increaseSize()
       if (this.splatDiameter() > this.maxDiameter) {
-<<<<<<< HEAD
         this.stopEffectAndSubmitForm(splat)
-=======
-        this.stopAndDestroySplat(splat)
->>>>>>> f226a0e (clean up paint splat controller)
       }
     }, 10);
   }
