@@ -2,28 +2,55 @@
 
 /* ********* Page Level CSS *********** */
 
+html, body { margin: 0; padding: 0; }
+* { box-sizing: border-box; }
+
 body {
-  margin: 0;
-  display: flex; 
-  flex-direction: column;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas: "logo"
+                       "main";
+  font-family: "Roboto Condensed";
+  justify-items: center;
+}
+
+nav {
+  grid-area: logo;
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+main {
+  width: 100%;
+  grid-area: main;
+}
+
+.page-center {
+  height: 100%;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Roboto Condensed";
-  box-sizing: border-box;
-  height: 100vh; 
-  width: 100vw;
 }
 
 .home {
   color: #FFFFFF;
   background: #DC6C6C;
 }
+
 .result {
   color: #000;
   background: #FAE5E5;
 }
 
 /* ******** Nav Logo Style *********** */
+<<<<<<< HEAD
 nav {
   display: flex;
   height: 60px;
@@ -36,6 +63,9 @@ nav {
   position: fixed;
   top: 0; 
 }
+=======
+
+>>>>>>> grid_layout
 .nunchuck {
   height: 42px;
   width: 46px;
@@ -50,15 +80,19 @@ nav {
 }
 
 .container {
-  position: relative; 
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  margin-right: 15px;
+  margin-bottom: 10px;
 }
 
+.container > * {
+  margin-bottom: 5px;
+}
+
+ 
 #phone-input {
   padding: 7px 5px;
   border-radius: 8px;
@@ -71,6 +105,7 @@ nav {
 /*************************** TO DO - CHANGE BUTTON STYLE */
 .submit {
   padding: 7px 20px;
+  position: relative;
   border-radius: 5px;
   display: block;
   margin: auto;
@@ -79,39 +114,34 @@ nav {
   white-space: nowrap;
   text-decoration: none;
   color: #000;
-}
+} 
 
 .transition {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 0px; 
-  width: 0px;
   z-index: 2;
   border-radius: 50%;
 }
 
 /* ************************* Result ********** */
-main {
-  text-align: center;
-  width: 70%;
-}
 
 .result-container {
+  max-width: 700px;
   display: flex;
-  justify-content: space-between;  
-  margin-bottom: 30px;
+  justify-content: space-between;
+  margin: 0 auto 30px auto;  
 }
 
 .result-title {
-  font-size: 3em;
-  margin-bottom: 40px;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 2em;
 }
 
 .result-group {
   display: flex;
   align-items: center;
-  height: 80px;
 }
 
 .result-highlight {
@@ -129,13 +159,10 @@ main {
 
 }
 
-#phone-icon {
-  margin-right: 10px;
-}
-
-.result-icon {
-  height: 55px;
-  width: 55px;
+.icon {
+  margin: 0 5px; 
+  height: 45px;
+  width: 45px;
 }
 
 .test {
@@ -143,37 +170,9 @@ main {
   height: 10px;
 }
 
-.result-container {
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
+@media only screen and (max-width: 600px) {
+  .result-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
-.result-group {
-  display: flex;
-  align-items: center;
-  height: 80px;
-}
-
-.result-highlight {
-  text-decoration: none;
-  background: #DC6C6C;
-  border-radius: 15px;
-  padding: 7px 15px;
-  color: #FFF; 
-}
-
-#embed-preview {
-  background: #d98282;
-  width: 100%;
-}
-
-#phone-icon {
-  margin-right: 10px;
-}
-
-.result-icon {
-  height: 55px;
-  width: 55px;
-}
-

@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main.css">
   <script src="bundle.js" async></script>
 </head>
@@ -15,12 +16,10 @@
     <img id="flagrant-logo" src="images/Flagrant_logo_red.svg" alt="Flagrant Logo">
   </nav>
   <main data-controller="parameters clipboard">
-    <div class="result-title">
-      <span  data-parameters-target="output"></span>
-    </div>
+    <h1 class="result-title" data-parameters-target="output"></h1>
     <div class="result-container">
       <div class="result-group">
-        <img src="images/phone.svg" class="result-icon" id="phone-icon" alt="phone icon">
+        <img src="images/phone.svg" class="icon" id="phone-icon" alt="phone icon">
         <div class="container">
           <span>Call the Num</span>
           <a class="result-highlight" href="#" 
@@ -34,7 +33,7 @@
           <span id="embed-preview">&lta href="tel:<span data-parameters-target="embedPreview"></span>"&gt&lt\a&gt</span>
           <a class="result-highlight" href="#" data-action="clipboard#copy">Copy html to clipboard</a>
         </div>
-        <img src="images/embed.svg" class="result-icon" alt="webpage icon">
+        <img src="images/embed.svg" class="icon" alt="webpage icon">
       </div>
     </div> 
     <div>
