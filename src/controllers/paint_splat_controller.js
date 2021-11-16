@@ -11,8 +11,7 @@ export default class extends Controller {
     this.maxDiameter= 2.1 * Math.sqrt(Math.max(triggerPosition.x**2 + triggerPosition.y**2,
                                                (window.innerWidth - triggerPosition.x)**2 + triggerPosition.y**2, 
                                                (window.innerWidth - triggerPosition.x)**2 + (window.innerHeight - triggerPosition.y)**2,
-                                              triggerPosition.x**2 + (window.innerHeight - triggerPosition.y)**2)) 
-    console.log(this.maxDiameter)
+                                               triggerPosition.x**2 + (window.innerHeight - triggerPosition.y)**2)) 
   }
 
   paintTransition(event) {
