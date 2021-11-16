@@ -1,0 +1,6 @@
+{
+	"appId": "com.phone_link.app",
+	"appName": "phone_link",
+	"webDir": "./public",
+	"bundledWebRuntime": false
+}
