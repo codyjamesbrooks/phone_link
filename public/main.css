@@ -6,44 +6,51 @@ html, body { margin: 0; padding: 0; }
 * { box-sizing: border-box; }
 
 body {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: minmax(60px, auto) 1fr; 
-  align-items: center;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas: "logo"
+                       "main";
   justify-items: center;
-  justify-content: center;
   font-family: "Roboto Condensed";
-  height: 100vh; 
-  width: 100vw;
+}
+
+nav {
+  grid-area: logo;
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  padding: 5px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  grid-area: main;
 }
 
 .home {
   color: #FFFFFF;
   background: #DC6C6C;
 }
+
 .result {
   color: #000;
   background: #FAE5E5;
 }
 
 /* ******** Nav Logo Style *********** */
-nav {
-  display: flex;
-  height: 60px;
-  width: 100%;
-  max-width: 700px;
-  padding: 5px 30px;
-  align-items: center;
-  justify-content: space-between;
-}
+
 .nunchuck {
   height: 42px;
-  flex-shrink: 0;
   width: 46px;
 }
 #logo-container {
   display: flex;
-  flex-shrink: 0;
   align-items: center;
 }
 #flagrant-logo {
@@ -51,16 +58,17 @@ nav {
   height: 23px;
 }
 
+
 .container {
-  position: relative; 
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
   margin-right: 15px;
 }
 
+ 
 #phone-input {
   padding: 7px 5px;
   border-radius: 8px;
@@ -73,6 +81,7 @@ nav {
 /*************************** TO DO - CHANGE BUTTON STYLE */
 .submit {
   padding: 7px 20px;
+  position: relative;
   border-radius: 5px;
   display: block;
   margin: auto;
@@ -81,24 +90,17 @@ nav {
   white-space: nowrap;
   text-decoration: none;
   color: #000;
-}
+} 
 
 .transition {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 0px; 
-  width: 0px;
   z-index: 2;
   border-radius: 50%;
 }
 
 /* ************************* Result ********** */
-main {
-  text-align: center;
-  width: 70%;
-  border: 1px solid black;
-}
 
 .result-container {
   display: flex;

@@ -1,14 +1,21 @@
 import { Controller } from "@hotwired/stimulus";
+
  
 export default class extends Controller { 
   static values = { color: String } 
   static classes = [ 'transition' ]
   
   initialize() {
-    this.maxDiameter = 1.5 * Math.max(window.innerHeight, window.innerWidth)
+    // get farthest corner to use as max paint splat diameter
+    let triggerPosition = this.element.getBoundingClientRect()
+    this.maxDiameter= 2.1 * Math.sqrt(Math.max(triggerPosition.x**2 + triggerPosition.y**2,
+                                               (window.innerWidth - triggerPosition.x)**2 + triggerPosition.y**2, 
+                                               (window.innerWidth - triggerPosition.x)**2 + (window.innerHeight - triggerPosition.y)**2,
+                                              triggerPosition.x**2 + (window.innerHeight - triggerPosition.y)**2)) 
+    console.log(this.maxDiameter)
   }
 
-  changePage(event) {
+  paintTransition(event) {
     event.preventDefault()
     this.createSplat()
     this.startGrowing()
@@ -38,7 +45,7 @@ export default class extends Controller {
 
   stopEffectAndSubmitForm() {
     window.clearInterval(this.growTimer)
-    this.element.submit()
+    this.element.closest('form').submit()
   }
 
   increaseSize() {
