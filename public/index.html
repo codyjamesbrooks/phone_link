@@ -16,19 +16,21 @@
     <img id="flagrant-logo" src="images/flagrant_logo_white.png" alt="Flagrant Logo">
   </nav>
   <main>
-    <div class="container">
-      <h1>Enter Phone Number</h1>
-      <form action="/result">
-        <input id="phone-input" type="tel" autofocus placeholder="(123) 456-7890" 
-               name="number" maxlength="15"
-               data-controller="phone-input" data-action="phone-input#format"
-               data-phone-input-number-value="">
-        <a href="#" class="submit"
-          data-controller="paint-splat"
-          data-paint-splat-transition-class="transition"
-          data-paint-splat-color-value="#FAE5E5"
-          data-action="paint-splat#paintTransition">Go</a>
-      </form>
+    <div class="page-center">
+      <div class="container">
+        <h1>Enter Phone Number</h1>
+        <form action="/result">
+          <input id="phone-input" type="tel" autofocus placeholder="(123) 456-7890" 
+                name="number" maxlength="15"
+                data-controller="phone-input" data-action="phone-input#format"
+                data-phone-input-number-value="">
+          <a href="#" class="submit"
+            data-controller="paint-splat"
+            data-paint-splat-transition-class="transition"
+            data-paint-splat-color-value="#FAE5E5"
+            data-action="paint-splat#paintTransition">Go</a>
+        </form>
+      </div>
     </div>
   </main>
 </body>
