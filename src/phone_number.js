@@ -15,7 +15,7 @@ export class PhoneNumber {
   to_link() {
     let linkHREF = `tel:${this.escape}${this.country}${this.number.replace(/[^+\d]/g, "")}`
     if (+this.pause > 0 && this.ext != "") {
-      linkHREF += (',' * +this.pause) + this.ext;
+      linkHREF += (','.repeat(this.pause)) + this.ext;
     }
     else if (this.ext != "") {
       linkHREF += '#' + this.ext; 

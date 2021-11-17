@@ -91,7 +91,7 @@ main {
   position: relative;
   border-radius: 5px;
   display: block;
-  margin: auto;
+  margin: 5px auto 10px auto;
   background: #C4C4C4;
   width: min-content;
   white-space: nowrap;
@@ -110,7 +110,7 @@ main {
 /* ************************* Result ********** */
 
 .result-container {
-  max-width: 700px;
+  max-width: 600px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto 30px auto;  
@@ -147,6 +147,24 @@ main {
   margin: 0 5px; 
   height: 45px;
   width: 45px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* To doooo Style this Sucker */
+#edit-number {
+  margin: auto;
+  width: 80%;
+}
+
+#edit-number > label {
+  display: block;
+}
+
+#edit-number > input {
+
 }
 
 @media only screen and (max-width: 600px) {

@@ -16,7 +16,6 @@
     <img id="flagrant-logo" src="images/Flagrant_logo_red.svg" alt="Flagrant Logo">
   </nav>
   <main data-controller="parameters clipboard"
-        data-parameters-number-value=""
         data-parameters-country-value="1"
         data-parameters-escape-value="+"
         data-parameters-ext-value=""
@@ -41,10 +40,33 @@
         <img src="images/embed.svg" class="icon" alt="webpage icon">
       </div>
     </div> 
-    <div>
-      <span>
+    <div data-controller="show-hide">
+      <div>
         <a href="/" class="submit">Another Num?</a>
-      </span>
+        <a href="/" class="submit" data-action="show-hide#toggleShow">Edit your Num</a>
+      </div>
+      <div class="hidden" data-show-hide-target="hiddenElement" id="edit-number">
+        <label for="country">Country Code
+          <select data-controller="country" id="country"
+                  data-action="parameters#changeCountry"
+                  data-parameters-target="selectCountry"></select>
+        </label>
+        <!-- <label for="escape">Escape Code
+          <input id="escape" type="text" value="+" readonly
+                 data-action="parameters#changeEscape"
+                 data-parameters-target="inputEscape">
+        </label> -->
+        <label for="ext">Extension
+          <input for="ext" placeholder="Ext: 123" maxlength="3"
+                 data-action="parameters#changeExt"
+                 data-parameters-target="inputExt">
+        </label>
+        <label for="pause">Encoded pause
+          <input for="pause" type="number" placeholder="duration"
+                 data-action="parameters#changePause"
+                 data-parameters-target="inputPause">second
+        </label>
+      </div>
     </div>
   </main>
 </body>
