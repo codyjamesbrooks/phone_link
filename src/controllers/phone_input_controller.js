@@ -1,8 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
-import { AsYouType } from "libphonenumber-js";
 
 export default class extends Controller {
-  static values = { number: String}
 
   format() {
     let stripped = this.element.value.replace(/[^+\d]/g, "")
