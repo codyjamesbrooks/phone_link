@@ -1,4 +1,4 @@
-export default class PhoneNumber {
+export class PhoneNumber {
   constructor(number, country="1", escape="+", ext="", pause=0) {
     this.number = number;
     this.country = country;
@@ -9,7 +9,7 @@ export default class PhoneNumber {
 
   to_s() {
     let output = `${this.escape}${this.country} ${this.number}`
-    return ext != "" ? output + ` Ext ${this.ext}` : output
+    return this.ext != "" ? output + ` Ext ${this.ext}` : output
   }
 
   to_link() {
