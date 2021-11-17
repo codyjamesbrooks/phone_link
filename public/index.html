@@ -21,9 +21,8 @@
         <h1>Enter Phone Number</h1>
         <form action="/result">
           <input id="phone-input" type="tel" autofocus placeholder="(123) 456-7890" 
-                name="number" maxlength="15"
-                data-controller="phone-input" data-action="phone-input#format"
-                data-phone-input-number-value="">
+                name="number" maxlength="14" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+                data-controller="phone-input" data-action="phone-input#format">
           <a href="#" class="submit"
             data-controller="paint-splat"
             data-paint-splat-transition-class="transition"
