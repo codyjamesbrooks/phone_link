@@ -50,22 +50,6 @@ main {
 }
 
 /* ******** Nav Logo Style *********** */
-<<<<<<< HEAD
-nav {
-  display: flex;
-  height: 60px;
-  width: 98%;
-  max-width: 800px;
-  padding: 5px 30px;
-  align-items: center;
-  justify-content: space-between;
-  font-size: .8em;
-  position: fixed;
-  top: 0; 
-}
-=======
-
->>>>>>> grid_layout
 .nunchuck {
   height: 42px;
   width: 46px;
@@ -91,7 +75,6 @@ nav {
 .container > * {
   margin-bottom: 5px;
 }
-
  
 #phone-input {
   padding: 7px 5px;
@@ -163,11 +146,6 @@ nav {
   margin: 0 5px; 
   height: 45px;
   width: 45px;
-}
-
-.test {
-  width: 10px;
-  height: 10px;
 }
 
 @media only screen and (max-width: 600px) {
