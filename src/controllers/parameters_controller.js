@@ -1,27 +1,27 @@
 import { Controller } from "@hotwired/stimulus";
+import { PhoneNumber } from "../phone_number";
 
 export default class extends Controller {
-  static targets = [ 'output', 'callLink', 'embedPreview' ]
+  static targets = [ 'banner', 'link', 'embed' ]
+  static values = { number: String, country: String, escape: String, 
+                    ext: String, pause: String }
 
   initialize() {
     let params = new URLSearchParams(document.location.search)
-    this.number = params.get('number')
-    this.updateOutputHTML()
-    this.updateLink()
-    this.updateEmbedPreview()
+    this.numberValue = params.get('number')
+    this.numberObject = new PhoneNumber(params.get('number'), 
+                                        this.countryValue, 
+                                        this.escapeValue,
+                                        this.extValue, 
+                                        this.pauseValue)
+    this.numberValue= new PhoneNumber(params.get('number'))
+    this.updateDisplays()
   }
 
-  updateOutputHTML() {
-    this.outputTarget.innerHTML = this.number
-  }
-
-  updateLink() {
-    this.callLinkTarget.innerHTML = this.number
-    let phoneHref = `tel:+1${this.number.replace(/[^+\d]/g, "")}`
-    this.callLinkTarget.setAttribute("href", phoneHref)
-  }
-
-  updateEmbedPreview() {
-    this.embedPreviewTarget.innerHTML = `+1${this.number.replace(/[^+\d]/g, "")}`
+  updateDisplays() {
+    this.bannerTarget.innerHTML = this.numberObject.to_s()
+    this.linkTarget.innerHTML = this.numberObject.to_s()
+    this.linkTarget.setAttribute("href", this.numberObject.to_link())
+    this.embedTarget.innerHTML = `${this.numberObject.to_link()}>\n${this.numberObject.to_s()}`
   }
 }
