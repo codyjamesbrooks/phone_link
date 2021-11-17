@@ -15,22 +15,27 @@
     </div>
     <img id="flagrant-logo" src="images/Flagrant_logo_red.svg" alt="Flagrant Logo">
   </nav>
-  <main data-controller="parameters clipboard">
-    <h1 class="result-title" data-parameters-target="output"></h1>
+  <main data-controller="parameters clipboard"
+        data-parameters-number-value=""
+        data-parameters-country-value="1"
+        data-parameters-escape-value="+"
+        data-parameters-ext-value=""
+        data-parameters-pause-value="">
+    <h1 class="result-title" data-parameters-target="banner"></h1>
     <div class="result-container">
       <div class="result-group">
         <img src="images/phone.svg" class="icon" id="phone-icon" alt="phone icon">
         <div class="container">
           <span>Call the Num</span>
           <a class="result-highlight" href="#" 
-             data-parameters-target="callLink"
+             data-parameters-target="link"
              data-clipboard-target="link"></a>
         </div>
       </div>
       <div class="result-group">
         <div class="container">
           <span>Embed the Num</span>
-          <span id="embed-preview">&lta href="tel:<span data-parameters-target="embedPreview"></span>"&gt&lt\a&gt</span>
+          <span id="embed-preview">&lta href="<span data-parameters-target="embed"></span>&lt\a&gt</span>
           <a class="result-highlight" href="#" data-action="clipboard#copy">Copy html to clipboard</a>
         </div>
         <img src="images/embed.svg" class="icon" alt="webpage icon">
